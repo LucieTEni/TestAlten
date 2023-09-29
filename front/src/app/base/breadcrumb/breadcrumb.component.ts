@@ -16,7 +16,7 @@ export class BreadcrumbComponent implements OnInit {
   @Input() public lang = 'en';
   public items: MenuItem[] = [];
   private readonly sidenavItems: SidenavItem[] = SIDENAV_ITEMS;
-  private homeItem: MenuItem = { label: 'Home', routerLink: '/' };
+  private homeItem: MenuItem = { label: 'Home', routerLink: 'products' };
 
   constructor(
     private readonly sidenavService: SidenavService,
@@ -37,7 +37,7 @@ export class BreadcrumbComponent implements OnInit {
   }
 
   private buildBreadcrumb(path: string): void {
-    const firstPath: SidenavItem = this.sidenavItems.find(item => '/' + item.id === path);
+    const firstPath: SidenavItem = this.sidenavItems.find(item => 'products' + item.id === path);
     if (firstPath) {
       this.items.push({
         label: firstPath.labels[this.lang],
