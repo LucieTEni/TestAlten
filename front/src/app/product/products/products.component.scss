@@ -1,5 +1,25 @@
-p-table {
-    color: black;
-    width: 20rem;
-    background-color: cadetblue;
+.app-element {
+    width: 50%;
+    margin: auto;
+}
+.pi {
+    margin-right: 5px;
+}
+
+div {
+    display: block;
+}
+
+button {
+    border-radius: 12%;
+    background-color: rgb(19, 106, 236);
+    color: white;
+    padding: 5px;
+    padding-inline: 8px;
+    border: none;
+    align-items: center;
+}
+
+button:hover {
+    cursor: pointer;
 }

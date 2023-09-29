@@ -9,7 +9,7 @@ export interface CrudItemOptions {
   /** Label of the form control and the datatable column */
   label: string;
   /** Represents the type of the form control: input, select, autocomplete... */
-  controlType: ControlType;
+  controlType?: ControlType;
   /** Specifies the type of the form control when it's an 'input': text, number... */
   type?: string;
   /** Contains the options of a 'select' or 'multiselect' form control */
