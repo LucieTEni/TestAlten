@@ -8,12 +8,13 @@
 </ng-template>
 
 <ng-template #templateListProduct  let-product>
-    <div><span class="pi pi-tag"></span>{{product.category}}</div>
-    <div>{{product.inventoryStatus}}</div>
-    <div>{{product.name}}</div>
-    <div>{{product.description}}</div>
-    <p-rating [ngModel]="product.rating" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
-    <button><span class="pi pi-shopping-cart"></span>{{product.price}} €</button>
+    <div class="list-product">
+        <div><span class="pi pi-tag"></span>{{product.category}}</div>
+        <div>{{product.inventoryStatus}}</div>
+        <div>{{product.name}}</div>
+        <div><p-rating [ngModel]="product.rating" [readonly]="true" [stars]="5" [cancel]="false"></p-rating></div>
+        <div><button><span class="pi pi-shopping-cart"></span>{{product.price}} €</button></div>
+    </div>
 </ng-template>
 
 <div class="app-frame">
@@ -22,6 +23,9 @@
         [items]="data"
         [gridItemTemplate]="templateGridProduct"
         [listItemTemplate]="templateListProduct"
+        [pagination]="true"
+        [sortKey]="sortKey"
+        (filtered)="getElements($event)"
         >
     </app-list>
     </div>

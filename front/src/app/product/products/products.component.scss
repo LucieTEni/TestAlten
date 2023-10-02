@@ -23,3 +23,14 @@ button {
 button:hover {
     cursor: pointer;
 }
+
+.list-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.list-product > div {
+    flex-basis: 17%;
+}
