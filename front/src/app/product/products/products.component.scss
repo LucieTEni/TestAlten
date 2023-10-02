@@ -1,7 +1,15 @@
 .app-element {
-    width: 50%;
+    width: 100vmax;
     margin: auto;
 }
+
+@media  screen and (min-width: 1692px) {
+    .app-element {
+        width: 50%;
+    }
+}
+
+
 .pi {
     margin-right: 5px;
 }

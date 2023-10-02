@@ -24,7 +24,10 @@
         [gridItemTemplate]="templateGridProduct"
         [listItemTemplate]="templateListProduct"
         [pagination]="true"
-        [sortKey]="sortKey"
+        [sortKey]="sortKeyTitle"
+        [listKey]="listKey"
+        [sortOptions]="sortOptions"
+        [backEndSearch]="true"
         (filtered)="getElements($event)"
         >
     </app-list>
