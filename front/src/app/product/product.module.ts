@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsComponent } from './products/products.component';
 import { ProductsAdminComponent } from './products-admin/products-admin.component';
 import { SharedModule } from 'app/shared/shared.module';
+import { ProductsService } from './products.service';
 
 
 
@@ -14,6 +15,8 @@ import { SharedModule } from 'app/shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-  ]
+  ],
+  providers: [ProductsService]
+  
 })
 export class ProductModule { }

@@ -1,5 +1,44 @@
-p-table {
-    color: black;
-    width: 20rem;
-    background-color: cadetblue;
+.app-element {
+    width: 100vmax;
+    margin: auto;
+}
+
+@media  screen and (min-width: 1692px) {
+    .app-element {
+        width: 50%;
+    }
+}
+
+
+.pi {
+    margin-right: 5px;
+}
+
+div {
+    display: block;
+}
+
+button {
+    border-radius: 12%;
+    background-color: rgb(19, 106, 236);
+    color: white;
+    padding: 5px;
+    padding-inline: 8px;
+    border: none;
+    align-items: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.list-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.list-product > div {
+    flex-basis: 17%;
 }

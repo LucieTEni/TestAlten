@@ -54,7 +54,8 @@
             <p-checkbox [binary]="true" (onChange)="selectItem($event, item)"></p-checkbox>
           </div>
         </ng-container>
-        <ng-container [ngTemplateOutlet]="listItemTemplate" [ngTemplateOutletContext]="{$implicit: item, index: i, display: 'list'}"></ng-container>
+        <ng-container [ngTemplateOutlet]="listItemTemplate" [ngTemplateOutletContext]="{$implicit: item, index: i, display: 'list'}">
+        </ng-container>
       </div>
     </div>
   </ng-template>
