@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
-import { Category, Product } from '../product.model';
+import { Category, Product, STOCK } from '../product.model';
 import { CrudItemOptions } from 'app/shared/utils/crud-item-options/crud-item-options.model';
 import { ControlType } from 'app/shared/utils/crud-item-options/control-type.model';
 
@@ -24,16 +24,6 @@ export class ProductsAdminComponent implements OnInit {
   getCRUDItemOptions(): void {
     this.productsCRUD = [
       {
-        label: 'Code',
-        key: 'code',
-        value: 'code',
-        columnOptions: {
-          default: true,
-        },
-        controlType: ControlType.INPUT,
-        type: 'number'
-      },
-      {
         label: 'Name',
         key: 'name',
         value: 'name',
@@ -44,6 +34,16 @@ export class ProductsAdminComponent implements OnInit {
         type: 'text',
       },
       {
+        label: 'Code',
+        key: 'code',
+        value: 'code',
+        columnOptions: {
+          default: true,
+        },
+        controlType: ControlType.INPUT,
+        type: 'text'
+      },
+      {
         label: 'Category',
         key: 'category',
         value: 'category',
@@ -52,6 +52,7 @@ export class ProductsAdminComponent implements OnInit {
         },
         controlType: ControlType.SELECT,
         options: [
+          {value: null, label: 'Category', disabled: true},
           {value: Category.ACCESSORIES, label: Category.ACCESSORIES},
           {value: Category.CLOTHING, label: Category.CLOTHING},
           {value: Category.ELECTRONICS, label: Category.ELECTRONICS},
@@ -77,16 +78,50 @@ export class ProductsAdminComponent implements OnInit {
         },
         controlType: ControlType.INPUT,
         type: 'number'
+      },
+      {
+        label: 'Quantity',
+        key: 'quantity',
+        value: 'quantity',
+        columnOptions: {
+          default: false,
+        },
+        controlType: ControlType.INPUT,
+        type: 'number'
+      },
+      {
+        label: 'Stock',
+        key: 'inventoryStatus',
+        value: 'inventoryStatus',
+        columnOptions: {
+          default: false,
+        },
+        controlType: ControlType.SELECT,
+        options: [
+          {value: null, label: 'Inventory Status', disabled: true},
+          {value: STOCK.INSTOCK, label: STOCK.INSTOCK},
+          {value: STOCK.OUTOFSTOCK, label: STOCK.OUTOFSTOCK},
+          {value: STOCK.LOWSTOCK, label: STOCK.LOWSTOCK},
+        ]
+      },
+      {
+        label: 'ID',
+        key: 'id',
+        value: 0,
+        columnOptions: {
+          default: false,
+        },
+        type: 'number'
       }
     ];
   }
 
   saved(product: Product): void {
-    console.log(product);
+    this.products = this.productService.saved(product);
   }
 
   deleted(ids: number[]): void {
-    this.products = this.products.filter(product => !ids.includes(product.id));
+    this.products = this.productService.deleted(ids);
   }
 
 }
