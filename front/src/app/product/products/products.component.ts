@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ProductsService } from '../products.service';
-import { Product, STOCK } from '../product.model';
+import { Product } from '../product.model';
 import { SearchParams } from 'app/shared/ui/list/search.model';
 import { SelectItem } from 'primeng/api';
 

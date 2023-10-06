@@ -1,3 +1,16 @@
 <div class="app-frame">
-    <app-table></app-table>
-</div>>
+    <app-table 
+    [data]="products" 
+    [allowDelete]="true" 
+    [multiSelect]="true" 
+    [allowEdit]="true" 
+    [selectable]="true" 
+    [allowAdd]="true" 
+    [config]="productsCRUD" 
+    [entity]="productModel"
+    [editableRows]= "true"
+    (saved)="saved($event)"
+    (deleted)="deleted($event)">
+
+    </app-table>
+</div>-
