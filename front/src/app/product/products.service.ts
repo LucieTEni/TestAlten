@@ -18,7 +18,7 @@ export class ProductsService {
         return this.products;
     }
 
-    public saved(newProduct: Product): Product[] {
+    public saved(newProduct: Product, offset?: number, length?: number): Product[] {
         if (Number(newProduct.id) === 0) {
             newProduct.id = Date.now();
             if (newProduct.code === '') {
@@ -41,9 +41,9 @@ export class ProductsService {
         return this.products;
     }
 
-    public deleted(ids: number[]): Product[] {
+    public deleted(ids: number[], offset?: number, length?: number): Product[] {
         // with API 
-        // return this.productAPI.deleteProduct(ids);
+        // return this.productAPI.deleteProduct(ids, offset, length);
         
         return this.products.filter(product => !ids.includes(product.id));
     }
