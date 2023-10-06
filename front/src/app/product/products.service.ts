@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import products from '../../assets/products.json';
-import { Product } from "./product.model";
+import { Product, ProductsData } from "./product.model";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
     providedIn: 'root'
@@ -8,12 +9,18 @@ import { Product } from "./product.model";
 export class ProductsService {
 
     private products = [];
+    private urlAPI = "http://127.0.0.1:8000";
     
-    constructor() {
+    constructor(private http: HttpClient) {
         this.products = products.data; 
     }
 
     public getProducts(): Product[] {
+        this.http.get<ProductsData>(this.urlAPI + '/products').subscribe(
+            response => {
+              return this.products = response.products
+            }
+        );
         return this.products;
     }
 

@@ -3,6 +3,7 @@ import { ProductsService } from '../products.service';
 import { Category, Product, STOCK } from '../product.model';
 import { CrudItemOptions } from 'app/shared/utils/crud-item-options/crud-item-options.model';
 import { ControlType } from 'app/shared/utils/crud-item-options/control-type.model';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-products-admin',

@@ -11,6 +11,10 @@ export enum Category {
     ELECTRONICS = "Electronics",
 }
 
+export interface ProductsData {
+    products: Product[];
+}
+
 export interface Product {
     id?: number;
 	code?: string,

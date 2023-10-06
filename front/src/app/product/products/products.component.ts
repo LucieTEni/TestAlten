@@ -3,6 +3,7 @@ import { ProductsService } from '../products.service';
 import { Product } from '../product.model';
 import { SearchParams } from 'app/shared/ui/list/search.model';
 import { SelectItem } from 'primeng/api';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-products',
